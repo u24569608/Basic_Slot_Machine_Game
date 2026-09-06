@@ -24,7 +24,7 @@ type
 
             sSymbolCombination : String; 
         public 
-            constructor Construct(pCreditAmount, pBetAmount : Real);  
+            constructor Construct(pCreditAmount, pBetAmount : Currency);  
             destructor Destroy; override;
             procedure Spin;    
             function GetGameState : TGameState;       
@@ -32,7 +32,7 @@ type
 
 implementation 
 
-constructor TSlotMachine.Construct(pCreditAmount, pBetAmount : Real); 
+constructor TSlotMachine.Construct(pCreditAmount, pBetAmount : Currency); 
 begin 
     gsGameState := TGameState.Construct(pCreditAmount, pBetAmount); 
     rngRandomNumberGenerator := TRandomNumberGenerator.Construct; 
@@ -51,7 +51,9 @@ end;
 
 procedure TSlotMachine.Spin; 
 begin
+    Writeln('============================');
     Writeln('GOOD LUCK'); 
+
     // Generate THREE Random Numbers
     iRN1 := rngRandomNumberGenerator.GenerateRN(1, 10); 
     iRN2 := rngRandomNumberGenerator.GenerateRN(1, 10); 
@@ -62,6 +64,7 @@ begin
     cSymbol2 := vrVirtualReel.GetSymbolFromRN(iRN2); 
     cSymbol3 := vrVirtualReel.GetSymbolFromRN(iRN3); 
 
+    
     Writeln('+-----------+'); 
     Writeln('| ' + cSymbol1 + ' | ' + cSymbol2 + ' | ' + cSymbol3 + ' |'); 
     Writeln('+-----------+'); 
@@ -73,9 +76,15 @@ begin
     gsGameState.LoadCredit(gsGameState.GetWinAmount); 
 
     if (gsGameState.GetWinAmount > 0) then 
-        Writeln('WELL DONE. GAME OVER')
+        begin
+            Writeln('WELL DONE. GAME OVER'); 
+            Writeln('============================'); 
+        end
     else 
-        Writeln('TOO BAD. GAME OVER'); 
+        begin
+            Writeln('TOO BAD. GAME OVER'); 
+            Writeln('============================');
+        end; 
 end; 
 
 function TSlotMachine.GetGameState : TGameState; 

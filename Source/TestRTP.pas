@@ -15,8 +15,11 @@ var
 
     iSpin : Int64;
     sCombination : String;
-    rTotalBet, rTotalPayout, rPayout, rRTP : Real;
+    rTotalBet, rTotalPayout, rPayout, rRTP : Currency;
 begin
+    DefaultFormatSettings.CurrencyString := 'R';
+    DefaultFormatSettings.CurrencyFormat := 0;
+    
     rngRandomNumberGenerator := TRandomNumberGenerator.Construct;
     vrVirtualReel := TVirtualReel.Construct;
     ptPayTable := TPayTable.Construct;

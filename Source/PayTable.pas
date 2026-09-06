@@ -11,7 +11,7 @@ type
             function GetMultiplier(pSymbolCombination : String) : Integer; 
         public 
             constructor Construct;  
-            function GetWinAmount(pSymbolCombination : String; pBet : Real) : Real;  
+            function GetWinAmount(pSymbolCombination : String; pBet : Currency) : Currency;  
     end; 
 
 implementation 
@@ -33,7 +33,7 @@ begin
     end;
 end; 
 
-function TPayTable.GetWinAmount(pSymbolCombination : String; pBet : Real) : Real; 
+function TPayTable.GetWinAmount(pSymbolCombination : String; pBet : Currency) : Currency; 
 var
     iMultiplier : Integer; 
 begin

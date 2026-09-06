@@ -8,44 +8,44 @@ interface
 type 
     TGameState = class
         private 
-            rCreditAmount, rBetAmount, rWinAmount : Real;
+            rCreditAmount, rBetAmount, rWinAmount : Currency;
         public 
-            constructor Construct(pCreditAmount, pBetAmount : Real);  
+            constructor Construct(pCreditAmount, pBetAmount : Currency);  
 
-            procedure LoadCredit(pCreditAmountToLoad : Real);  
-            function GetCredit : Real;  
+            procedure LoadCredit(pCreditAmountToLoad : Currency);  
+            function GetCredit : Currency;  
 
-            procedure SetBetAmount(pBetAmount : Real);  
+            procedure SetBetAmount(pBetAmount : Currency);  
             procedure DeductBet;  
-            function GetBetAmount : Real;
+            function GetBetAmount : Currency;
 
-            procedure SetWinAmount(pWinAmount : Real); 
-            function GetWinAmount : Real; 
+            procedure SetWinAmount(pWinAmount : Currency); 
+            function GetWinAmount : Currency; 
             procedure ResetWinAmount;
 
     end; 
 
 implementation 
 
-constructor TGameState.Construct(pCreditAmount, pBetAmount : Real); 
+constructor TGameState.Construct(pCreditAmount, pBetAmount : Currency); 
 begin 
     rCreditAmount := pCreditAmount; 
     rBetAmount := pBetAmount; 
     rWinAmount := 0.00; 
 end; 
 
-procedure TGameState.LoadCredit(pCreditAmountToLoad : Real); 
+procedure TGameState.LoadCredit(pCreditAmountToLoad : Currency); 
 begin
     if (pCreditAmountToLoad > 0) then 
             rCreditAmount := rCreditAmount + pCreditAmountToLoad; 
 end; 
 
-function TGameState.GetCredit : Real; 
+function TGameState.GetCredit : Currency; 
 begin
     Result := rCreditAmount; 
 end; 
 
-procedure TGameState.SetBetAmount(pBetAmount : Real);  
+procedure TGameState.SetBetAmount(pBetAmount : Currency);  
 begin
     rBetAmount := pBetAmount; 
 end; 
@@ -56,17 +56,17 @@ begin
 end;   
 
 
-function TGameState.GetBetAmount : Real;  
+function TGameState.GetBetAmount : Currency;  
 begin
     Result := rBetAmount; 
 end; 
 
-procedure TGameState.SetWinAmount(pWinAmount : Real); 
+procedure TGameState.SetWinAmount(pWinAmount : Currency); 
 begin
     rWinAmount := pWinAmount; 
 end; 
 
-function TGameState.GetWinAmount : Real; 
+function TGameState.GetWinAmount : Currency; 
 begin
     Result := rWinAmount; 
 end; 
