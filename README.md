@@ -1,1 +1,1 @@
-# Basic_Slot_Machine_Game
+# Basic Slot Machine Game
