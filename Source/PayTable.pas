@@ -27,7 +27,7 @@ begin
         // MULTIPLIERS FOR SYMBOL COMBINATIONS
         'AAA': Result := 1; 
         'BBB': Result := 2; 
-        'CCC': Result := 10; 
+        'CCC': Result := 80; 
     else 
         Result := 0; 
     end;
