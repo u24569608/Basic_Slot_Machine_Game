@@ -20,8 +20,8 @@ begin
     Writeln('BASIC SLOT MACHINE GAME'); 
     Writeln('GAME BET AMOUNT: [' + FloatToStrF(rBetAmount, ffCurrency, 10, 2) + ']'); 
     Writeln('TO START, LOAD CREDIT FIRST');
-    Writeln('1. Load Credit'); 
-    Writeln('2. Exit'); 
+    Writeln('1. LOAD CREDIT'); 
+    Writeln('2. EXIT'); 
 
     Write('>>> '); 
     Readln(sInput); 
