@@ -1,3 +1,4 @@
+// TEST 
 program TestRTP;
 
 {$mode objfpc}{$H+}
@@ -6,7 +7,7 @@ uses
     SysUtils, RandomNumberGenerator, VirtualReel, PayTable;
 
 const
-    Spin_Count = 20000000 ;
+    Spin_Count = 10000000;
     Bet_Amount = 4.40;
 var
     rngRandomNumberGenerator : TRandomNumberGenerator;
